@@ -1,0 +1,298 @@
+@fontePrincipal: Roboto , sans-serif;
+@fonteTilulo: Lobster, cursive;
+@corPrincipalFundo: #778ca3;
+@corTextoPrimaria: #f1f1f1;
+@corDoBotao: #094914;
+@corHoverBotao: #18e239;
+@corFundoItem: #554d4dce;
+@corLink: #5cdb4b;
+@corFundoRodapeTabela: #9aec15;
+@corFundoTabela: #c6e6a0;
+
+body {
+    font-family: @fontePrincipal;
+    background-color: @corPrincipalFundo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: @corTextoPrimaria;
+    font-family: @fonteTilulo;
+    text-align: center;
+    letter-spacing: 0.4rem;
+    margin-bottom: 1rem; /* Adiciona um espaçamento entre o título e a tabela */
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    table {
+        width: 100%;
+        max-width: 600px;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        border-radius: 0.5rem; /* Borda arredondada para a tabela */
+        overflow: hidden; /* Garante que as bordas fiquem visíveis */
+
+        thead {
+            tr {
+                th {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                    background-color: @corFundoRodapeTabela;
+                    color: #2d3436;
+                    font-weight: bold;
+                    border-bottom: 2px solid #ccc;
+                }
+            }
+        }
+
+        tbody {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            tr {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                width: 25%;
+                padding: 1rem;
+                background-color: #ffffff;
+                border: 1px solid #ccc;
+                margin: 0.5rem;
+                transition: background-color 0.3s, transform 0.3s; /* Animação suave */
+                border-radius: 60%;
+
+                td {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    color: #2d3436;
+                    border: none;
+                }
+
+                &:hover {
+                    background-color: #e6dfd7; /* Cor de destaque ao passar o mouse */
+                    transform: translateY(-5px); /* Eleva o item ao passar o mouse */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+                }
+            }
+        }
+    }
+
+    input {
+        width: 25rem;
+        border: none;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        margin-bottom: 1rem;
+        color: #180101;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 1.5rem;
+        background-color: @corDoBotao;
+        color: @corTextoPrimaria;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: @corHoverBotao;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+    
+}
+
+.mensagem-busca {
+    text-align: center;
+    margin-top: 10px;
+    color: #000;
+}
+
+.item-resultado {
+    img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+}
+
+.resultados {
+    width: 60rem;
+    height: 46vh;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+
+    .item-resultado {
+        background: @corFundoItem;
+        border-radius: 0.6rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            font-size: 1.5rem;
+            color: #121418;
+        }
+
+        a {
+            text-decoration: none;
+            color: @corLink;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .descricao-meta {
+            color: #15171b;
+            margin: 0.5rem 0;
+        }
+    }
+}
+
+footer {
+    background-color:@corFundoRodapeTabela;
+    color: @corTextoPrimaria;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    section  {
+        table {
+            tbody {
+                flex-direction: column; /* Alinha os itens na vertical para telas menores */
+                tr {
+                    width: 100%; /* Cada fruta ocupa a largura completa */
+                }
+            }
+        }
+        input {
+        width: 20rem;
+        padding: 0.8rem;
+        } 
+}
+
+    .resultados {
+        width: 90%;
+        height: auto;
+    }
+
+    .item-resultado {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.8em;
+
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+
+
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    section {
+        table {
+            tbody {
+                flex-direction: column; /* Os itens ficam em uma única coluna */
+                tr {
+                    width: 100%; /* Frutas ocupam 100% da largura no celular */
+                    td {
+                        font-size: 1rem; /* Ajusta o tamanho da fonte para telas menores */
+                    }
+                }
+            } 
+            }
+
+        input {
+            width: 90%;
+        }
+    
+        button {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+    } 
+    
+    .resultados {
+        width: 90%;
+        height: auto;
+    }
+
+    .item-resultado {
+        border-radius: 0.4rem;
+        text-align: center;
+
+        h2 {
+            font-size: 1.1rem;
+        }
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    table {
+        max-width: 100%;
+
+        thead th {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+
+        tbody td {
+            font-size: 0.8rem;
+            padding: 0.5rem;
+        }
+    }
+}

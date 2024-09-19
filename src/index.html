@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Frutas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Ga+Maamli&family=Lobster&family=Matemasie&family=Noto+Serif&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="@@ENDERECO_DO_CSS">
+</head>
+<body>
+    <header> 
+        <div class="container"> <!-- Container para centralizar o conteúdo do cabeçalho -->
+            <h1>Pesquise Frutas</h1> <!-- Título principal da página -->
+        </div>
+    </header>
+
+    <main> <!-- Elemento principal da página que contém o conteúdo central -->
+        <!-- Adicionando a tabela com os nomes das frutas -->
+        <section>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nome das Frutas Disponiveis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maçã</td>
+                    </tr>
+                    <tr>
+                        <td>Banana</td>
+                    </tr>
+                    <tr>
+                        <td>Morango</td>
+                    </tr>
+                    <tr>
+                        <td>Laranja</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section> <!-- Seção para entrada de pesquisa -->
+            <input type="text" placeholder="Que fruta desejas?" id="campo-pesquisa"> <!-- Campo de entrada de texto para o usuário digitar o nome da fruta -->
+            <button onclick="pesquisar()">Pesquise</button> <!-- Botão que, ao ser clicado, chama a função JavaScript 'pesquisar()' -->
+        </section>
+
+        <section class="resultados" id="resultados"> <!-- Seção onde os resultados da pesquisa serão exibidos -->
+        </section>
+    </main>
+
+    <footer> <!-- Rodapé da página -->
+        2024 - Todos os direitos autorais - &copy; <!-- Informação de direitos autorais -->
+    </footer>
+    <!-- teste -->
+    <!-- Inclusão dos scripts JavaScript para adicionar funcionalidade à página -->
+    <script src="@@ENDERECO_DO_JS"></script> <!-- Script externo que contém a lista de frutas -->  <!-- Script externo que contém a lógica da pesquisa -->
+</body>
+</html>
